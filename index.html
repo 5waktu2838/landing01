@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limawaktu - Landing Page Premium</title>
+    <!-- Menggunakan Font Inter untuk kesan modern dan clean -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: #f8f9fa; /* Background abu-abu sangat muda agar elemen utama lebih pop-out */
+            color: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        /* Container khusus mobile-first dengan efek card premium */
+        .mobile-container {
+            width: 100%;
+            max-width: 450px;
+            background-color: #ffffff;
+            min-height: 100vh;
+            padding: 32px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.03);
+        }
+
+        /* Header Section */
+        .header-section {
+            margin-bottom: 28px;
+        }
+
+        .header-section h1 {
+            font-size: 32px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #111111;
+            margin-bottom: 6px;
+        }
+
+        .header-section p {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #718096;
+            letter-spacing: 2px;
+        }
+
+        /* Ads Banner (1080x400) */
+        .ads-banner {
+            width: 100%;
+            aspect-ratio: 1080 / 400;
+            background-color: #edf2f7;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+        }
+
+        .ads-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Slideshow Container (1080x1440) */
+        .slideshow-container {
+            width: 100%;
+            margin-bottom: 28px;
+        }
+
+        .slideshow-box {
+            width: 100%;
+            aspect-ratio: 1080 / 1440;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+        }
+
+        .slideshow-wrapper {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+        }
+
+        .slideshow-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+        .slide {
+            flex: 0 0 100%;
+            width: 100%;
+            height: 100%;
+            scroll-snap-align: start;
+            background-color: #f7fafc;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Indikator Slide (Dots) */
+        .slide-dots {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 12px;
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #cbd5e0;
+        }
+        .dot.active {
+            background-color: #4a5568;
+            width: 14px;
+            border-radius: 3px;
+        }
+
+        /* Hubungi Kami Section */
+        .contact-section {
+            width: 100%;
+            margin-top: 8px;
+        }
+
+        .contact-title {
+            font-size: 22px;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+            letter-spacing: 1px;
+            color: #1a202c;
+        }
+
+        .divider {
+            width: 40px;
+            height: 3px;
+            background-color: #111111;
+            margin: 0 auto 28px auto;
+            border-radius: 2px;
+        }
+
+        /* Store List Container */
+        .store-list {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+            width: 100%;
+        }
+
+        /* Store Group & Buttons */
+        .store-group {
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .store-name {
+            font-size: 25px; /* Sesuai instruksi: 25px */
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            letter-spacing: 0.8px;
+            color: #111111;
+        }
+
+        .store-address {
+            font-size: 12px;
+            font-weight: 500;
+            color: #718096;
+            line-height: 1.4;
+            margin-bottom: 12px;
+            padding: 0 16px;
+        }
+
+        .whatsapp-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80%; /* Sesuai instruksi: lebar dipendekkan jadi 80% */
+            padding: 16px;
+            background: linear-gradient(135deg, #25D366, #20ba5a); /* Gradasi hijau WhatsApp lembut */
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 20px; /* Sesuai instruksi: font tombol 20px */
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.25);
+            transition: all 0.2s ease;
+        }
+
+        /* Efek Interaktif Saat Tombol Ditekan */
+        .whatsapp-btn:active {
+            transform: scale(0.97);
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.15);
+            background: linear-gradient(135deg, #20ba5a, #1b9f4d);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mobile-container">
+        
+        <!-- Header -->
+        <header class="header-section">
+            <h1>Limawaktu</h1>
+            <p>Official Store</p>
+        </header>
+
+        <!-- Banner Iklan -->
+        <div class="ads-banner">
+            <img src="ads.png" alt="Ads Banner">
+        </div>
+
+        <!-- Slideshow 3 Gambar -->
+        <div class="slideshow-container">
+            <div class="slideshow-box">
+                <div class="slideshow-wrapper">
+                    <div class="slide"><img src="slide1.png" alt="Slide 1"></div>
+                    <div class="slide"><img src="slide2.png" alt="Slide 2"></div>
+                    <div class="slide"><img src="slide3.png" alt="Slide 3"></div>
+                </div>
+            </div>
+            <div class="slide-dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+
+        <!-- Bagian Kontak / WhatsApp -->
+        <div class="contact-section">
+            <h2 class="contact-title">Hubungi Kami</h2>
+            <div class="divider"></div>
+
+            <div class="store-list">
+                
+                <!-- 1. WARU -->
+                <div class="store-group">
+                    <div class="store-name">Limawaktu Waru</div>
+                    <div class="store-address">Jl. Brigjend Katamso No 37-39 Waru - Sidoarjo ( Barat Pom Janti )</div>
+                    <a href="https://wa.me/6285766645555?text=Halo%20Limawaktu%20Waru" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                </div>
+
+                <!-- 2. BETRO -->
+                <div class="store-group">
+                    <div class="store-name">Limawaktu Betro</div>
+                    <div class="store-address">Jl. Raya Sedati Agung No.44 Dukuh Betro Kec. Sedati, Kab Sidoarjo</div>
+                    <a href="https://wa.me/6285878055555?text=Halo%20Limawaktu%20Betro" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                </div>
+
+                <!-- 3. KETINTANG -->
+                <div class="store-group">
+                    <div class="store-name">Limawaktu Ketintang</div>
+                    <div class="store-address">Jl. Ketintang Barat No.01 - Surabaya ( Depan Indomaret Ketintang )</div>
+                    <a href="https://wa.me/628155115559?text=Halo%20Limawaktu%20Ketintang" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                </div>
+
+                <!-- 4. MAYJEND -->
+                <div class="store-group">
+                    <div class="store-name">Limawaktu Mayjend</div>
+                    <div class="store-address">Jl. Mayjend Sungkono No.11-13 - Sidoarjo ( Samping SPBU Pucang )</div>
+                    <a href="https://wa.me/6281558115554?text=Halo%20Limawaktu%20Mayjend" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                </div>
+
+                <!-- 5. PANDAAN 1 -->
+                <div class="store-group">
+                    <div class="store-name">Limawaktu Pandaan 1</div>
+                    <div class="store-address">Jl. A Yani No.143 Pandaan - Pasuruan ( Depan Kecamatan Pandaan )</div>
+                    <a href="https://wa.me/6285868055555?text=Halo%20Limawaktu%20Pandaan%201" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                </div>
+
+                <!-- 6. SUKO -->
+                <div class="store-group">
+                    <div class="store-name">Limawaktu Suko</div>
+                    <div class="store-address">Jl. Raya Biting Suko No.63 - Sidoarjo ( Depan Pasar Suko )</div>
+                    <a href="https://wa.me/6285756535555?text=Halo%20Limawaktu%20Suko" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                </div>
+
+                <!-- 7. SUKODONO -->
+                <div class="store-group">
+                    <div class="store-name">Limawaktu Sukodono</div>
+                    <div class="store-address">Jl. Kebonagung Km.77 No.99 - Bogem - Sukodono - Sidoarjo ( Selatan Puskesmas Sukodono )</div>
+                    <a href="https://wa.me/6285867055555?text=Halo%20Limawaktu%20Sukodono" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                </div>
+
+                <!-- 8. WAGE -->
+                <div class="store-group">
+                    <div class="store-name">Limawaktu Wage</div>
+                    <div class="store-address">Perum Taman Surya Agung Blok C No. 10 Desa Wage Kec. Taman Kab Sidoarjo</div>
+                    <a href="https://wa.me/6285852055555?text=Halo%20Limawaktu%20Wage" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                </div>
+
+                <!-- 9. PROBOLINGGO -->
+                <div class="store-group">
+                    <div class="store-name">Limawaktu Probolinggo</div>
+                    <div class="store-address">Jl. Dr Soetomo No.149 - Probolinggo ( Depan Hotel Bromo Park )</div>
+                    <a href="https://wa.me/6288994332489?text=Halo%20Limawaktu%20Probolinggo" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                </div>
+
+                <!-- 10. KRAKSAAN -->
+                <div class="store-group">
+                    <div class="store-name">Limawaktu Kraksaan</div>
+                    <div class="store-address">Jl P Sudirman No 124 Kraksaan, Probolinggo ( Timur Gacoan Kraksaan )</div>
+                    <a href="https://wa.me/6285860115555?text=Halo%20Limawaktu%20Kraksaan" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                </div>
+
+                <!-- 11. SITUBONDO -->
+                <div class="store-group">
+                    <div class="store-name">Limawaktu Situbondo</div>
+                    <div class="store-address">Jl. A Yani No.110e-110f - Situbondo ( Depan Roda Mas Motor )</div>
+                    <a href="https://wa.me/628585145555?text=Halo%20Limawaktu%20Situbondo" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                </div>
+
+                <!-- 12. BANYUWANGI -->
+                <div class="store-group">
+                    <div class="store-name">Limawaktu Banyuwangi</div>
+                    <div class="store-address">Jln. Jendral A Yani No 50a, Penganjuran ( Depan Bri Banyuwangi )</div>
+                    <a href="https://wa.me/6285860665555?text=Halo%20Limawaktu%20Banyuwangi" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                </div>
+
+                <!-- 13. BONDOWOSO -->
+                <div class="store-group">
+                    <div class="store-name">Limawaktu Bondowoso</div>
+                    <div class="store-address">Jl. Re. Martadinata No.46 Bondowoso ( 100 M Timur Alun - Alun )</div>
+                    <a href="https://wa.me/628562155455?text=Halo%20Limawaktu%20Bondowoso" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                </div>
+
+                <!-- 14. MONANG MANING -->
+                <div class="store-group">
+                    <div class="store-name">Limawaktu Monang Maning</div>
+                    <div class="store-address">Jl. Gunung Rinjani No.9 B.4 - Monang Maning - Denpasar ( Sebelum Alfa Mart Gunung Rinjani ) Depan Ka Shop</div>
+                    <a href="https://wa.me/6285822255555?text=Halo%20Limawaktu%20Monang%20Maning" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                </div>
+
+                <!-- 15. TEUKU UMAR -->
+                <div class="store-group">
+                    <div class="store-name">Limawaktu Teuku Umar</div>
+                    <div class="store-address">Jln Teuku Umar Barat No 412 ( Barat Sebelah Gerai Mixue )</div>
+                    <a href="https://wa.me/6285822255555?text=Halo%20Limawaktu%20Teuku%20Umar" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                </div>
+
+                <!-- 16. BONDOWOSO 3 -->
+                <div class="store-group">
+                    <div class="store-name">Limawaktu Bondowoso 3</div>
+                    <div class="store-address">Jl. Kh. Wahid Hasyim No. 168 ( Timur Bank Bca ) Blindungan, Bondowoso</div>
+                    <a href="https://wa.me/6285658075555?text=Halo%20Limawaktu%20Bondowoso%203" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                </div>
+
+                <!-- 17. JEMBER 2 -->
+                <div class="store-group">
+                    <div class="store-name">Limawaktu Jember 2</div>
+                    <div class="store-address">Jl Kalimantan No 72 Lama ( Depan Pujasera Kalimantan )</div>
+                    <a href="https://wa.me/6285860665555?text=Halo%20Limawaktu%20Jember%202" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                </div>
+
+                <!-- 18. PROBOLINGGO 1 -->
+                <div class="store-group">
+                    <div class="store-name">Limawaktu Probolinggo 1</div>
+                    <div class="store-address">Jl Dokter Soetomo No 23/24 Depan Gm</div>
+                    <a href="https://wa.me/6285860115555?text=Halo%20Limawaktu%20Probolinggo%201" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                </div>
+
+                <!-- 19. ASEMBAGUS -->
+                <div class="store-group">
+                    <div class="store-name">Limawaktu Asembagus</div>
+                    <div class="store-address">Jl. Pantura Situbondo Banyuwangi No. 216 Asembagus ( Timur Toko Kurnia )</div>
+                    <a href="https://wa.me/6285828055555?text=Halo%20Limawaktu%20Asembagus" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Script Logika Dots Slideshow saat digeser
+        const wrapper = document.querySelector('.slideshow-wrapper');
+        const dots = document.querySelectorAll('.dot');
+        
+        wrapper.addEventListener('scroll', () => {
+            const index = Math.round(wrapper.scrollLeft / wrapper.clientWidth);
+            dots.forEach((dot, i) => {
+                if(i === index) dot.classList.add('active');
+                else dot.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
