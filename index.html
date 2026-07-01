@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Limawaktu - Landing Page Premium</title>
+    <title>Pre-Order OPPO Reno16 Premium Resmi | Limawaktu</title>
     <!-- Menggunakan Font Inter untuk kesan modern dan clean -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -41,23 +41,70 @@
         /* Header Section */
         .header-section {
             margin-bottom: 28px;
+            padding: 0 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* Elemen Logo dengan Rasio 1080x400 dan Ukuran 80% */
+        .store-logo {
+            width: 80%;
+            aspect-ratio: 1080 / 400;
+            object-fit: contain;
+            margin-bottom: 12px;
+        }
+
+        /* Tagline Utama Toko */
+        .store-tagline {
+            font-size: 14px;
+            font-weight: 700;
+            color: #e53e3e; /* Warna merah premium untuk highlight penawaran */
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        /* Kategori Produk */
+        .product-categories {
+            font-size: 11px;
+            font-weight: 600;
+            color: #4a5568;
+            line-height: 1.6;
+            background-color: #f7fafc;
+            padding: 10px 14px;
+            border-radius: 12px;
+            border: 1px dashed #e2e8f0;
+            margin-bottom: 24px;
+            width: 100%;
         }
 
         .header-section h1 {
-            font-size: 32px;
+            font-size: 24px;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 0.5px;
             color: #111111;
-            margin-bottom: 6px;
+            margin-bottom: 10px;
+            line-height: 1.5; /* Memberi jarak baris yang pas untuk efek highlighter */
         }
 
-        .header-section p {
+        /* Styling efek stabilo mengikuti tulisan baris per baris */
+        .header-section h1 mark {
+            background-color: #ffeb3b; /* Kuning terang cerah */
+            color: #111111;
+            padding: 2px 4px;
+            border-radius: 2px;
+            display: inline; /* Mengikuti text flow baris demi baris, bukan bentuk kotak utuh */
+            box-shadow: 4px 0 0 #ffeb3b, -4px 0 0 #ffeb3b; /* Merapikan ujung coretan stabilo di tiap baris */
+        }
+
+        .header-section p.preorder-sub {
             font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
+            font-weight: 500;
             color: #718096;
-            letter-spacing: 2px;
+            line-height: 1.5;
         }
 
         /* Ads Banner (1080x400) */
@@ -147,12 +194,22 @@
         }
 
         .contact-title {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 800;
             text-transform: uppercase;
-            margin-bottom: 14px;
+            margin-bottom: 8px;
             letter-spacing: 1px;
             color: #1a202c;
+        }
+
+        /* Cakupan Wilayah Sub-heading */
+        .coverage-areas {
+            font-size: 11px;
+            font-weight: 600;
+            color: #718096;
+            line-height: 1.5;
+            margin-bottom: 16px;
+            padding: 0 10px;
         }
 
         .divider {
@@ -181,7 +238,7 @@
         }
 
         .store-name {
-            font-size: 25px; /* Sesuai instruksi: 25px */
+            font-size: 25px;
             font-weight: 800;
             text-transform: uppercase;
             margin-bottom: 4px;
@@ -202,12 +259,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 80%; /* Sesuai instruksi: lebar dipendekkan jadi 80% */
+            width: 80%;
             padding: 16px;
-            background: linear-gradient(135deg, #25D366, #20ba5a); /* Gradasi hijau WhatsApp lembut */
+            background: linear-gradient(135deg, #25D366, #20ba5a);
             color: #ffffff;
             text-decoration: none;
-            font-size: 20px; /* Sesuai instruksi: font tombol 20px */
+            font-size: 20px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -228,10 +285,20 @@
 
     <div class="mobile-container">
         
-        <!-- Header -->
+        <!-- Header Utama Pre-Order + Logo + Informasi Bisnis -->
         <header class="header-section">
-            <h1>Limawaktu</h1>
-            <p>Official Store</p>
+            <img src="logo.png" alt="Logo Limawaktu" class="store-logo">
+            
+            <div class="store-tagline">Toko Gadget Terlengkap & Termurah Se-Jawa Timur</div>
+            
+            <div class="product-categories">
+                Handphone • Sepeda Listrik • Elektronik Rumah Tangga<br>
+                Aksesoris Handphone • Laptop • TV • Paket Data Indosat
+            </div>
+
+            <!-- Seluruh teks judul utama dibungkus tag mark inline untuk efek stabilo asli -->
+            <h1><mark>Jadi yang Pertama Merasakan Era Baru OPPO Reno16</mark></h1>
+            <p class="preorder-sub">Amankan kuota pre-order eksklusif di Limawaktu sekarang. Slot terbatas, banjir bonus spesial & garansi resmi!</p>
         </header>
 
         <!-- Banner Iklan -->
@@ -239,7 +306,7 @@
             <img src="ads.png" alt="Ads Banner">
         </div>
 
-        <!-- Slideshow 3 Gambar -->
+        <!-- Slideshow 3 Gambar (Autoplay) -->
         <div class="slideshow-container">
             <div class="slideshow-box">
                 <div class="slideshow-wrapper">
@@ -255,9 +322,15 @@
             </div>
         </div>
 
-        <!-- Bagian Kontak / WhatsApp -->
+        <!-- Bagian Kontak / Cabang Toko -->
         <div class="contact-section">
-            <h2 class="contact-title">Hubungi Kami</h2>
+            <h2 class="contact-title">Pilih Cabang Terdekat</h2>
+            
+            <div class="coverage-areas">
+                Sidoarjo • Surabaya • Pandaan • Probolinggo • Situbondo<br>
+                Bondowoso • Banyuwangi • Jember • Bali
+            </div>
+
             <div class="divider"></div>
 
             <div class="store-list">
@@ -266,133 +339,133 @@
                 <div class="store-group">
                     <div class="store-name">Limawaktu Waru</div>
                     <div class="store-address">Jl. Brigjend Katamso No 37-39 Waru - Sidoarjo ( Barat Pom Janti )</div>
-                    <a href="https://wa.me/6285766645555?text=Halo%20Limawaktu%20Waru" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                    <a href="https://wa.me/6285766645555?text=Halo%20Limawaktu%20Waru%2C%20saya%20mau%20pre-order%20OPPO%20Reno16" class="whatsapp-btn" target="_blank">WhatsApp</a>
                 </div>
 
                 <!-- 2. BETRO -->
                 <div class="store-group">
                     <div class="store-name">Limawaktu Betro</div>
                     <div class="store-address">Jl. Raya Sedati Agung No.44 Dukuh Betro Kec. Sedati, Kab Sidoarjo</div>
-                    <a href="https://wa.me/6285878055555?text=Halo%20Limawaktu%20Betro" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                    <a href="https://wa.me/6285878055555?text=Halo%20Limawaktu%20Betro%2C%20saya%20mau%20pre-order%20OPPO%20Reno16" class="whatsapp-btn" target="_blank">WhatsApp</a>
                 </div>
 
                 <!-- 3. KETINTANG -->
                 <div class="store-group">
                     <div class="store-name">Limawaktu Ketintang</div>
                     <div class="store-address">Jl. Ketintang Barat No.01 - Surabaya ( Depan Indomaret Ketintang )</div>
-                    <a href="https://wa.me/628155115559?text=Halo%20Limawaktu%20Ketintang" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                    <a href="https://wa.me/628155115559?text=Halo%20Limawaktu%20Ketintang%2C%20saya%20mau%20pre-order%20OPPO%20Reno16" class="whatsapp-btn" target="_blank">WhatsApp</a>
                 </div>
 
                 <!-- 4. MAYJEND -->
                 <div class="store-group">
                     <div class="store-name">Limawaktu Mayjend</div>
                     <div class="store-address">Jl. Mayjend Sungkono No.11-13 - Sidoarjo ( Samping SPBU Pucang )</div>
-                    <a href="https://wa.me/6281558115554?text=Halo%20Limawaktu%20Mayjend" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                    <a href="https://wa.me/6281558115554?text=Halo%20Limawaktu%20Mayjend%2C%20saya%20mau%20pre-order%20OPPO%20Reno16" class="whatsapp-btn" target="_blank">WhatsApp</a>
                 </div>
 
                 <!-- 5. PANDAAN 1 -->
                 <div class="store-group">
                     <div class="store-name">Limawaktu Pandaan 1</div>
                     <div class="store-address">Jl. A Yani No.143 Pandaan - Pasuruan ( Depan Kecamatan Pandaan )</div>
-                    <a href="https://wa.me/6285868055555?text=Halo%20Limawaktu%20Pandaan%201" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                    <a href="https://wa.me/6285868055555?text=Halo%20Limawaktu%20Pandaan%201%2C%20saya%20mau%20pre-order%20OPPO%20Reno16" class="whatsapp-btn" target="_blank">WhatsApp</a>
                 </div>
 
                 <!-- 6. SUKO -->
                 <div class="store-group">
                     <div class="store-name">Limawaktu Suko</div>
                     <div class="store-address">Jl. Raya Biting Suko No.63 - Sidoarjo ( Depan Pasar Suko )</div>
-                    <a href="https://wa.me/6285756535555?text=Halo%20Limawaktu%20Suko" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                    <a href="https://wa.me/6285756535555?text=Halo%20Limawaktu%20Suko%2C%20saya%20mau%20pre-order%20OPPO%20Reno16" class="whatsapp-btn" target="_blank">WhatsApp</a>
                 </div>
 
                 <!-- 7. SUKODONO -->
                 <div class="store-group">
                     <div class="store-name">Limawaktu Sukodono</div>
                     <div class="store-address">Jl. Kebonagung Km.77 No.99 - Bogem - Sukodono - Sidoarjo ( Selatan Puskesmas Sukodono )</div>
-                    <a href="https://wa.me/6285867055555?text=Halo%20Limawaktu%20Sukodono" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                    <a href="https://wa.me/6285867055555?text=Halo%20Limawaktu%20Sukodono%2C%20saya%20mau%20pre-order%20OPPO%20Reno16" class="whatsapp-btn" target="_blank">WhatsApp</a>
                 </div>
 
                 <!-- 8. WAGE -->
                 <div class="store-group">
                     <div class="store-name">Limawaktu Wage</div>
                     <div class="store-address">Perum Taman Surya Agung Blok C No. 10 Desa Wage Kec. Taman Kab Sidoarjo</div>
-                    <a href="https://wa.me/6285852055555?text=Halo%20Limawaktu%20Wage" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                    <a href="https://wa.me/6285852055555?text=Halo%20Limawaktu%20Wage%2C%20saya%20mau%20pre-order%20OPPO%20Reno16" class="whatsapp-btn" target="_blank">WhatsApp</a>
                 </div>
 
                 <!-- 9. PROBOLINGGO -->
                 <div class="store-group">
                     <div class="store-name">Limawaktu Probolinggo</div>
                     <div class="store-address">Jl. Dr Soetomo No.149 - Probolinggo ( Depan Hotel Bromo Park )</div>
-                    <a href="https://wa.me/6288994332489?text=Halo%20Limawaktu%20Probolinggo" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                    <a href="https://wa.me/6288994332489?text=Halo%20Limawaktu%20Probolinggo%2C%20saya%20mau%20pre-order%20OPPO%20Reno16" class="whatsapp-btn" target="_blank">WhatsApp</a>
                 </div>
 
                 <!-- 10. KRAKSAAN -->
                 <div class="store-group">
                     <div class="store-name">Limawaktu Kraksaan</div>
                     <div class="store-address">Jl P Sudirman No 124 Kraksaan, Probolinggo ( Timur Gacoan Kraksaan )</div>
-                    <a href="https://wa.me/6285860115555?text=Halo%20Limawaktu%20Kraksaan" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                    <a href="https://wa.me/6285860115555?text=Halo%20Limawaktu%20Kraksaan%2C%20saya%20mau%20pre-order%20OPPO%20Reno16" class="whatsapp-btn" target="_blank">WhatsApp</a>
                 </div>
 
                 <!-- 11. SITUBONDO -->
                 <div class="store-group">
                     <div class="store-name">Limawaktu Situbondo</div>
                     <div class="store-address">Jl. A Yani No.110e-110f - Situbondo ( Depan Roda Mas Motor )</div>
-                    <a href="https://wa.me/628585145555?text=Halo%20Limawaktu%20Situbondo" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                    <a href="https://wa.me/628585145555?text=Halo%20Limawaktu%20Situbondo%2C%20saya%20mau%20pre-order%20OPPO%20Reno16" class="whatsapp-btn" target="_blank">WhatsApp</a>
                 </div>
 
                 <!-- 12. BANYUWANGI -->
                 <div class="store-group">
                     <div class="store-name">Limawaktu Banyuwangi</div>
                     <div class="store-address">Jln. Jendral A Yani No 50a, Penganjuran ( Depan Bri Banyuwangi )</div>
-                    <a href="https://wa.me/6285860665555?text=Halo%20Limawaktu%20Banyuwangi" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                    <a href="https://wa.me/6285860665555?text=Halo%20Limawaktu%20Banyuwangi%2C%20saya%20mau%20pre-order%20OPPO%20Reno16" class="whatsapp-btn" target="_blank">WhatsApp</a>
                 </div>
 
                 <!-- 13. BONDOWOSO -->
                 <div class="store-group">
                     <div class="store-name">Limawaktu Bondowoso</div>
                     <div class="store-address">Jl. Re. Martadinata No.46 Bondowoso ( 100 M Timur Alun - Alun )</div>
-                    <a href="https://wa.me/628562155455?text=Halo%20Limawaktu%20Bondowoso" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                    <a href="https://wa.me/628562155455?text=Halo%20Limawaktu%20Bondowoso%2C%20saya%20mau%20pre-order%20OPPO%20Reno16" class="whatsapp-btn" target="_blank">WhatsApp</a>
                 </div>
 
                 <!-- 14. MONANG MANING -->
                 <div class="store-group">
                     <div class="store-name">Limawaktu Monang Maning</div>
                     <div class="store-address">Jl. Gunung Rinjani No.9 B.4 - Monang Maning - Denpasar ( Sebelum Alfa Mart Gunung Rinjani ) Depan Ka Shop</div>
-                    <a href="https://wa.me/6285822255555?text=Halo%20Limawaktu%20Monang%20Maning" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                    <a href="https://wa.me/6285822255555?text=Halo%20Limawaktu%20Monang%20Maning%2C%20saya%20mau%20pre-order%20OPPO%20Reno16" class="whatsapp-btn" target="_blank">WhatsApp</a>
                 </div>
 
                 <!-- 15. TEUKU UMAR -->
                 <div class="store-group">
                     <div class="store-name">Limawaktu Teuku Umar</div>
                     <div class="store-address">Jln Teuku Umar Barat No 412 ( Barat Sebelah Gerai Mixue )</div>
-                    <a href="https://wa.me/6285822255555?text=Halo%20Limawaktu%20Teuku%20Umar" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                    <a href="https://wa.me/6285822255555?text=Halo%20Limawaktu%20Teuku%20Umar%2C%20saya%20mau%20pre-order%20OPPO%20Reno16" class="whatsapp-btn" target="_blank">WhatsApp</a>
                 </div>
 
                 <!-- 16. BONDOWOSO 3 -->
                 <div class="store-group">
                     <div class="store-name">Limawaktu Bondowoso 3</div>
                     <div class="store-address">Jl. Kh. Wahid Hasyim No. 168 ( Timur Bank Bca ) Blindungan, Bondowoso</div>
-                    <a href="https://wa.me/6285658075555?text=Halo%20Limawaktu%20Bondowoso%203" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                    <a href="https://wa.me/6285658075555?text=Halo%20Limawaktu%20Bondowoso%203%2C%20saya%20mau%20pre-order%20OPPO%20Reno16" class="whatsapp-btn" target="_blank">WhatsApp</a>
                 </div>
 
                 <!-- 17. JEMBER 2 -->
                 <div class="store-group">
                     <div class="store-name">Limawaktu Jember 2</div>
                     <div class="store-address">Jl Kalimantan No 72 Lama ( Depan Pujasera Kalimantan )</div>
-                    <a href="https://wa.me/6285860665555?text=Halo%20Limawaktu%20Jember%202" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                    <a href="https://wa.me/6285860665555?text=Halo%20Limawaktu%20Jember%202%2C%20saya%20mau%20pre-order%20OPPO%20Reno16" class="whatsapp-btn" target="_blank">WhatsApp</a>
                 </div>
 
                 <!-- 18. PROBOLINGGO 1 -->
                 <div class="store-group">
                     <div class="store-name">Limawaktu Probolinggo 1</div>
                     <div class="store-address">Jl Dokter Soetomo No 23/24 Depan Gm</div>
-                    <a href="https://wa.me/6285860115555?text=Halo%20Limawaktu%20Probolinggo%201" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                    <a href="https://wa.me/6285860115555?text=Halo%20Limawaktu%20Probolinggo%201%2C%20saya%20mau%20pre-order%20OPPO%20Reno16" class="whatsapp-btn" target="_blank">WhatsApp</a>
                 </div>
 
                 <!-- 19. ASEMBAGUS -->
                 <div class="store-group">
                     <div class="store-name">Limawaktu Asembagus</div>
                     <div class="store-address">Jl. Pantura Situbondo Banyuwangi No. 216 Asembagus ( Timur Toko Kurnia )</div>
-                    <a href="https://wa.me/6285828055555?text=Halo%20Limawaktu%20Asembagus" class="whatsapp-btn" target="_blank">WhatsApp</a>
+                    <a href="https://wa.me/6285828055555?text=Halo%20Limawaktu%20Asembagus%2C%20saya%20mau%20pre-order%20OPPO%20Reno16" class="whatsapp-btn" target="_blank">WhatsApp</a>
                 </div>
 
             </div>
@@ -401,17 +474,50 @@
     </div>
 
     <script>
-        // Script Logika Dots Slideshow saat digeser
         const wrapper = document.querySelector('.slideshow-wrapper');
         const dots = document.querySelectorAll('.dot');
-        
-        wrapper.addEventListener('scroll', () => {
-            const index = Math.round(wrapper.scrollLeft / wrapper.clientWidth);
+        const slides = document.querySelectorAll('.slide');
+        let currentIndex = 0;
+        let autoplayInterval;
+
+        function updateDots(index) {
             dots.forEach((dot, i) => {
                 if(i === index) dot.classList.add('active');
                 else dot.classList.remove('active');
             });
+        }
+
+        function startAutoplay() {
+            autoplayInterval = setInterval(() => {
+                currentIndex++;
+                if (currentIndex >= slides.length) {
+                    currentIndex = 0;
+                }
+                wrapper.scrollTo({
+                    left: currentIndex * wrapper.clientWidth,
+                    behavior: 'smooth'
+                });
+                updateDots(currentIndex);
+            }, 3000);
+        }
+
+        wrapper.addEventListener('scroll', () => {
+            const index = Math.round(wrapper.scrollLeft / wrapper.clientWidth);
+            if (index !== currentIndex) {
+                currentIndex = index;
+                updateDots(currentIndex);
+            }
         });
+
+        wrapper.addEventListener('touchstart', () => {
+            clearInterval(autoplayInterval);
+        });
+
+        wrapper.addEventListener('touchend', () => {
+            startAutoplay();
+        });
+
+        startAutoplay();
     </script>
 </body>
 </html>
